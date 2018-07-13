@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isAddressSelected"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="homeFragment"
+            type="com.lelocab.home.HomeFragment" />
+
+
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_8dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/ic_green_dot" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#c0c0c0" />
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/ic_red_dot" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoTxtFrom"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/transparent"
+                        android:completionThreshold="1"
+                        android:dropDownAnchor="@+id/autoTxtFrom"
+                        android:hint="@string/from"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true"
+                        android:selectAllOnFocus="true"
+                        android:textSize="16sp" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#90c0c0c0" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoTxtTo"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/transparent"
+                        android:completionThreshold="1"
+                        android:dropDownAnchor="@+id/autoTxtTo"
+                        android:hint="@string/to"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true"
+                        android:selectAllOnFocus="true"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/mPlaceDetailsAttribution"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+
+                    <TextView
+                        android:id="@+id/mPlaceDetailsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_map_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/ll_car_selector"
+                layout="@layout/select_car_booking_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                bind:homeFragment="@{homeFragment}" />
+
+            <include
+                android:id="@+id/ll_ride_detail"
+                layout="@layout/booking_detial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                bind:homeFragment="@{homeFragment}" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+</layout>

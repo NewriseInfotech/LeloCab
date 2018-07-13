@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="loginRequestModel"
+            type="com.lelocab.login.LoginRequestModel" />
+
+        <variable
+            name="presenter"
+            type="com.lelocab.login.ILoginPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/app_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_80dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <EditText
+                android:id="@+id/ed_contact_number"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:hint="@string/contact_number"
+                android:inputType="number"
+                android:text="@={loginRequestModel.phoneNumber}" />
+
+            <EditText
+                android:id="@+id/ed_password"
+                style="@style/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:text="@={loginRequestModel.password}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/check_remember_me"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="@{loginRequestModel.remember}"
+                    android:text="@string/remember_me"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:onClick="onClickForgotPassword"
+                    android:text="@string/forgot_password"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <Button
+                style="@style/login_button_style"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8dp"
+                android:onClick="@{()->presenter.onLoginClick(loginRequestModel)}"
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/sign_up_button_style"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8dp"
+                android:onClick="onClickSignUp"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

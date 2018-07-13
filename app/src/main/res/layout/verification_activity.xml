@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="VerificationFragmentDataBinding">
+
+        <variable
+            name="loginResponseModel"
+            type="com.lelocab.login.LoginResponseModel" />
+
+        <variable
+            name="presenter"
+            type="com.lelocab.verification.IVerificationPresenter" />
+
+        <variable
+            name="otp"
+            type="String" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_bg"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_16dp">
+
+            <TextView
+                style="@style/commonTextViewLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/please_enter_your_otp_below"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                style="@style/commonTextViewLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:background="@drawable/edittext_shape"
+                android:digits="0123456789"
+                android:gravity="center"
+                android:hint="@string/enter_otp_here"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="@dimen/_8dp"
+                android:singleLine="true"
+                android:text="@={otp}" />
+
+            <Button
+                style="@style/login_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:elevation="@dimen/_4dp"
+                android:onClick="@{() -> presenter.verifyUser(otp,loginResponseModel)}"
+                android:text="@string/verify" />
+
+            <TextView
+                style="@style/commonTextViewMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.reSendOTP(otp,loginResponseModel)}"
+                android:text="@string/resend_code"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

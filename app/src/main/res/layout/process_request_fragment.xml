@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="ProcessJobFragmentBinding">
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@drawable/progress_cricle"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.lelocab.custom.ProgressWheel
+                android:id="@+id/progressBar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                ProgressWheel:pwBarColor="#D43926"
+                ProgressWheel:pwBarLength="30dp"
+                ProgressWheel:pwBarWidth="14dp"
+                ProgressWheel:pwCircleColor="#00ffffff"
+                ProgressWheel:pwContourColor="#00ffffff"
+                ProgressWheel:pwRimColor="#00ffffff"
+                ProgressWheel:pwSpinSpeed="3dp"
+                ProgressWheel:pwText="0%"
+                ProgressWheel:pwTextColor="#ffffff"
+                ProgressWheel:pwTextSize="24sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

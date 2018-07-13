@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "782099927206",
+    "firebase_url": "https://prevoir-projects.firebaseio.com",
+    "project_id": "prevoir-projects",
+    "storage_bucket": "prevoir-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782099927206:android:fdf0e760803183f5",
+        "android_client_info": {
+          "package_name": "com.lelocab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782099927206-g5jr277qkf1bh7dge1q1a3buact53ng5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lelocab",
+            "certificate_hash": "3f6d72012495d06e49ba02dffccaceb870f03514"
+          }
+        },
+        {
+          "client_id": "782099927206-fuqfmmo3det2v2gl0qd3077enu8q3upl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAExRx-7tcVK0Fxu93su20IdtSg_Bl1pk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782099927206-fuqfmmo3det2v2gl0qd3077enu8q3upl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
